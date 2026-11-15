@@ -1,0 +1,12 @@
+{
+  "name": "hunter-clip-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": { "start": "node index.js" },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0",
+    "yt-dlp-exec": "^1.0.3",
+    "fluent-ffmpeg": "^2.1.3",
+    "axios": "^1.7.0"
+  }
+}
