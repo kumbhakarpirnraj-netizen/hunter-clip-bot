@@ -1,3 +1,5 @@
+const http = require('http');
+http.createServer((req,res)=>{res.end('Bot is Live')}).listen(process.env.PORT || 10000);
 const TelegramBot = require('node-telegram-bot-api');
 const { exec } = require('child_process');
 const fs = require('fs');
