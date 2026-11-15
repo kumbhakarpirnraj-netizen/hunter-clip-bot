@@ -29,7 +29,7 @@ bot.on('message', async (msg) => {
   try {
     bot.sendMessage(chatId, "📥 Video Download ho raha hai...");
     await new Promise((res, rej) => {
-      exec(`npx yt-dlp -f "mp4[height<=720]" -o "${workDir}/main.mp4" "${text}"`, (err) => err ? rej(err) : res());
+      exec(yt-dlp -f "mp4[height<=720]" -o "${workDir}/main.mp4" "${text}"`, (err) => err ? rej(err) : res());
     });
 
     let duration = 180;
