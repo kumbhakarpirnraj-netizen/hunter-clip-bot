@@ -29,9 +29,7 @@ bot.on('message', async (msg) => {
   try {
     bot.sendMessage(chatId, "📥 Video Download ho raha hai...");
     await new Promise((res, rej) => {
-      exec(`yt-dlp -f "mp4[height<=720]/best" --extractor-args "youtube:player_client=android,web" --js-runtimes node --no-playlist -o "${workDir}/main.mp4" "${text}"`, (err) => err ? rej(err) : res());
-    });
-
+    exec(`yt-dlp -f "mp4[height<=720]/best" --impersonate chrome --extractor-args "youtube:player_client=android,web,ios" --js-runtimes node --no-playlist --retries 3 -o "${workDir}/main.mp4" "${text}"`, (err) => err ? rej(err) : res());
     let duration = 180;
     await new Promise((res) => {
       exec(`ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "${workDir}/main.mp4"`, (e, out) => {
